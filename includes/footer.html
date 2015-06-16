@@ -1,0 +1,19 @@
+<?php # footer.html
+
+// Close the database connection.
+if (isset($dbc)) {
+	mysqli_close($dbc); //ne marche pas sur eidolon !!!
+	//mysql_close($dbc); //pour eidolon
+	unset($dbc);
+}
+?>
+  </div>
+	  
+	<div id="footer">
+	<p><!--<a href="http://validator.w3.org/check?uri=referer" target="_blank">Valid 
+  XHTML</a> | --><a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">Valid 
+  CSS</a> | Copyright &copy; 2013 </p>
+  </div>
+</div>
+</body>
+</html>
