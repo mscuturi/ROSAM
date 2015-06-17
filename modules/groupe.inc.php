@@ -81,11 +81,11 @@ $q = "SELECT IdVariete, varietes.Nom, NomCode FROM `varietes` inner join groupes
 			echo "</ol>";
 
 	} else { // No widgets here!
-		echo '<p class="error">Il n\'y a pas de variétés dans ce groupe.</p>';
+		echo '<p class="error">Il n\'y a pas de variÃ©tÃ©s dans ce groupe.</p>';
 	}
 
 } else { // Invalid $_GET['gid']!
-	echo '<p class="error">Erreur d\'accès .</p>';
+	echo '<p class="error">Erreur d\'accÃ¨s .</p>';
 }
 
 

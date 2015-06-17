@@ -21,18 +21,18 @@ if (!defined('BASE_URL')) {
 ?>
 
 	  <h2>Objectifs</h2> 
-      <!-- <h3><a href="http://www.univ-lyon2.fr">Université Lumière Lyon 2</a></h3> -->
+      <!-- <h3><a href="http://www.univ-lyon2.fr">UniversitÃ© LumiÃ¨re Lyon 2</a></h3> -->
 	  <p>Utiliser les nouvelles technologies au service de :
 		<ul>
-        	<li>la capitalisation des connaissances sur les plantes en général, les roses en spécial (à travers des informations textuelles mais aussi des images et des vidéos) <!--– réunir les informations souvent partielles qu’on peut trouver dans des livres, encyclopédies dans une base de données en-ligne, accessible de partout (sans ou avec identification ?)--></li>
+        	<li>la capitalisation des connaissances sur les plantes en gÃ©nÃ©ral, les roses en spÃ©cial (Ã  travers des informations textuelles mais aussi des images et des vidÃ©os) <!--Â– rÃ©unir les informations souvent partielles quÂ’on peut trouver dans des livres, encyclopÃ©dies dans une base de donnÃ©es en-ligne, accessible de partout (sans ou avec identification ?)--></li>
 			<li>la valorisation des collections des roses anciennes et nouvelles</li>
-			<li>la diffusion d’informations sur les anciennes/nouvelles variétés</li>
-			<li>l’aide à l’identification des variétés de roses</li>
-			<!--<li>l’aide à la localisation des variétés (<a href="http://www.worldrose.org/conservation/wfrssrch.asp"> The World Federation of Rose Societies </a>) a créé une base de données qui permet de localiser l’endroit de conservation d’une variété – au niveau d’un (grand) jardin public, mais pas la localisation dans le jardin, on n’a pas des informations sur les mises à jour de la bdd).</li>
-			<li>l’aide à la recherche/localisation des pépinières (jardineries) qui proposent certaines variétés dans une région spécifiée</li>
-			<li>aménagement du territoire > variétés les plus appropriées en fonction de zone climatique, etc., mise en situation > google maps/street view + simulations aménagements paysagers ?</li>
-			<li>base de données avec images géolocalisées (ou au moins une information sur la région) pour pouvoir voir le comportement/l’apparence (growth habit – la croissance) des plantes dans les mêmes conditions climatiques (ou dans des conditions différentes)</li>-->
+			<li>la diffusion dÂ’informations sur les anciennes/nouvelles variÃ©tÃ©s</li>
+			<li>lÂ’aide Ã  lÂ’identification des variÃ©tÃ©s de roses</li>
+			<!--<li>lÂ’aide Ã  la localisation des variÃ©tÃ©s (<a href="http://www.worldrose.org/conservation/wfrssrch.asp"> The World Federation of Rose Societies </a>) a crÃ©Ã© une base de donnÃ©es qui permet de localiser lÂ’endroit de conservation dÂ’une variÃ©tÃ© Â– au niveau dÂ’un (grand) jardin public, mais pas la localisation dans le jardin, on nÂ’a pas des informations sur les mises Ã  jour de la bdd).</li>
+			<li>lÂ’aide Ã  la recherche/localisation des pÃ©piniÃ¨res (jardineries) qui proposent certaines variÃ©tÃ©s dans une rÃ©gion spÃ©cifiÃ©e</li>
+			<li>amÃ©nagement du territoire > variÃ©tÃ©s les plus appropriÃ©es en fonction de zone climatique, etc., mise en situation > google maps/street view + simulations amÃ©nagements paysagers ?</li>
+			<li>base de donnÃ©es avec images gÃ©olocalisÃ©es (ou au moins une information sur la rÃ©gion) pour pouvoir voir le comportement/lÂ’apparence (growth habit Â– la croissance) des plantes dans les mÃªmes conditions climatiques (ou dans des conditions diffÃ©rentes)</li>-->
             </ul>
 	</p>
-	<h2><a href="https://docs.google.com/forms/d/1vZlhgLyM8c_lp6xWIB-AEPXFGK4pPUiKQf1GOv0W1Hc/viewform"> Enquête Tête d'Or - 12.06.2015</a></h2>
+	<h2><a href="https://docs.google.com/forms/d/1vZlhgLyM8c_lp6xWIB-AEPXFGK4pPUiKQf1GOv0W1Hc/viewform"> EnquÃªte TÃªte d'Or - 12.06.2015</a></h2>
 	//<iframe src="https://docs.google.com/forms/d/1vZlhgLyM8c_lp6xWIB-AEPXFGK4pPUiKQf1GOv0W1Hc/viewform?embedded=true" width="760" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>

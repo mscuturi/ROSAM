@@ -29,7 +29,7 @@ if (isset($_GET['personne_id'])) {
 		// for this person:
 		
 		/////A faire : get idMetier + metier dans la table des Metiers
-		////		//données personne + idMetier + role dans le film + société de production
+		////		//donnÃ©es personne + idMetier + role dans le film + sociÃ©tÃ© de production
 /*	$q = "SELECT film_has_personne.role, personne.idPersonne, personne.nom, personne.prenom, personne.DateNaissance, personne.DateDeces, personne.biographie, personne.MetierPersonne_idMetierPersonne, personne.SocieteProduction_idSocieteProduction FROM (film_catalogue left join film_has_personne on film_catalogue.Film_idFilm=film_has_personne.Film_idFilm) left join personne on film_has_personne.Personne_idPersonne=personne.idPersonne WHERE film_catalogue.Film_idFilm=$film_id";
 */
 		
@@ -52,7 +52,7 @@ if ($nom) {
 	$page_title = $nom." ".$prenom;
 	echo "<h1>$nom"." "."$prenom</h1>\n";
 	
-	//récuperer metier dans la table metierpersonne
+	//rÃ©cuperer metier dans la table metierpersonne
 	if ($idMetierPersonne){
 		$qMetier = "SELECT nommetier FROM metierpersonne WHERE idMetierPersonne=$idMetierPersonne;";					
 		$rMetier = mysqli_query($dbc, $qMetier);
@@ -61,9 +61,9 @@ if ($nom) {
 			list ($strMetier) = mysqli_fetch_array($rMetier, MYSQLI_NUM);
 		}
 		
-		if($strMetier){echo "<p><em>Métier</em> :  $strMetier </em></p>";}									
+		if($strMetier){echo "<p><em>MÃ©tier</em> :  $strMetier </em></p>";}									
 	}
-	//récuperer societe production dans la table societeproduction
+	//rÃ©cuperer societe production dans la table societeproduction
 	if ($idSocieteProduction){
 		$qSociete = "SELECT nom FROM societeproduction WHERE idSocieteProduction=$idSocieteProduction;";					
 		$rSociete = mysqli_query($dbc, $qSociete);
@@ -72,12 +72,12 @@ if ($nom) {
 			list ($strSociete) = mysqli_fetch_array($rSociete, MYSQLI_NUM);
 		}
 		
-		if($strSociete){echo "<p><em>Société de production</em> :  $strSociete </em></p>";}									
+		if($strSociete){echo "<p><em>SociÃ©tÃ© de production</em> :  $strSociete </em></p>";}									
 	}
 	
 	
 	if ($datenaissance) {echo "<p><em>Date de naissance</em> : $datenaissance </p>";}
-	if ($datedeces) {echo "<p><em>Date de décés</em> : $datedeces </p>";}
+	if ($datedeces) {echo "<p><em>Date de dÃ©cÃ©s</em> : $datedeces </p>";}
 	if ($biographie) {echo "<p><em>Biographie</em> : $biographie </p>";}
 	
 } else { // Invalid $_GET['film_id']!

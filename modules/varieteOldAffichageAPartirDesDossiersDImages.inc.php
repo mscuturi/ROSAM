@@ -6,9 +6,9 @@
  *	The page expects to receive a $_GET['vid'] value.
  */
 
-//fonction de remplacement de caractères accentués
+//fonction de remplacement de caractÃ¨res accentuÃ©s
 function stripAccents($string){
-	return strtr($string,'àáâãäçèéêëìíîïñòóôõöùúûüıÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜİ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+	return strtr($string,'Ã Ã¡Ã¢Ã£Ã¤Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã±Ã²Ã³Ã´ÃµÃ¶Ã¹ÃºÃ»Ã¼Ã½Ã¿Ã€ÃÃ‚ÃƒÃ„Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã™ÃšÃ›ÃœÃ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 }
 
 
@@ -61,7 +61,7 @@ $nomDossier=str_replace(' ','',ucwords($nom));
 $nomDossier=str_replace("'",'',$nomDossier);
 //enlever les .
 $nomDossier=str_replace(".",'',$nomDossier);
-//remplacer les caractères accentués
+//remplacer les caractÃ¨res accentuÃ©s
 $nomDossier=stripAccents($nomDossier);
 $pathImage = "./images/".$idVariete."_".$nomDossier;
 if (is_dir($pathImage)) { // si c'est un nom de dossier valide
@@ -70,7 +70,7 @@ if (is_dir($pathImage)) { // si c'est un nom de dossier valide
 	$handle = @opendir($pathImage) or die ("Le dossier n'existe pas !");
 	if($handle){
 	$listef=NULL;
-	//On va parcourir chaque élément du dossier
+	//On va parcourir chaque Ã©lÃ©ment du dossier
 	while ($file = readdir($handle))
 	{ //Si les fichiers sont des images on va les mettre dans la liste des fichiers $listef[]
 		if(preg_match ("!(\.jpg|\.jpeg|\.gif|\.bmp|\.png)$!i", $file)){
@@ -83,17 +83,17 @@ if (is_dir($pathImage)) { // si c'est un nom de dossier valide
 		$nbImg=0;
 	}
 	for($noImg=0; $noImg<$nbImg; $noImg++){
-		//On récupère la largeur et l'hauteur de l'image
+		//On rÃ©cupÃ¨re la largeur et l'hauteur de l'image
 		$size = getimagesize($pathImage."/".$listef[$noImg]);
-				//Largeur maximale de l'image pour la création des miniatures
+				//Largeur maximale de l'image pour la crÃ©ation des miniatures
 		$largeur_maxi = 180;
-		//Si la largeur dépasse la limite autorisée...
+		//Si la largeur dÃ©passe la limite autorisÃ©e...
 		if ($size[0] > $largeur_maxi){
-			//...la nouvelle largeur est égale à la limite à ne pas dépasser
+			//...la nouvelle largeur est Ã©gale Ã  la limite Ã  ne pas dÃ©passer
 			$width = $largeur_maxi;
-			//La largeur d'origine divisée par la largeur limitée (on obtient un chiffre qui sert à faire la même proportion pour la hauteur)
+			//La largeur d'origine divisÃ©e par la largeur limitÃ©e (on obtient un chiffre qui sert Ã  faire la mÃªme proportion pour la hauteur)
 			$theight = ($size[0]/$largeur_maxi);
-			//La hauteur originale est divisée par le chiffre obtenu précédemment afin que l'image conserve les mêmes proportions que l'originale (mais en mode vignette)
+			//La hauteur originale est divisÃ©e par le chiffre obtenu prÃ©cÃ©demment afin que l'image conserve les mÃªmes proportions que l'originale (mais en mode vignette)
 			$height = ($size[1]/$theight);
 		} //end if $size[0]>$largeur_maxi
 		else{
@@ -101,7 +101,7 @@ if (is_dir($pathImage)) { // si c'est un nom de dossier valide
 			$width = $size[0]; 
 			$height = $size[1];
 		}
-		//On affiche l'image aléatoire (en respectant les standards ! <img src="http://forum.phpfrance.com/images/smilies/icon_smile.gif" alt=":)" title="Smile" /> )
+		//On affiche l'image alÃ©atoire (en respectant les standards ! <img src="http://forum.phpfrance.com/images/smilies/icon_smile.gif" alt=":)" title="Smile" /> )
 		echo "<a href=\"".$pathImage."/".$listef[$noImg]."\" onclick=\"window.open(this.href,'_blank');return false;\"><img style=\"border: none; width: ".$width."px; height: ".$height."px\" src=\"".$pathImage."/".$listef[$noImg]."\" alt=\"".$listef[$noImg]."\" /></a>";
 	} // end for each image
 	//On ferme le dossier

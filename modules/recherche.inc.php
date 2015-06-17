@@ -30,7 +30,7 @@ if (!defined('BASE_URL')) {
 // Print a caption:
 	echo '<h2>Module de recherche par image</h2>';
 	echo '<form name="formcbir" id="formcbir" method="post" action="../modules/recherche.inc.php">';
-	echo '	<label for="motcle">Mot clé : </label><br />';
+	echo '	<label for="motcle">Mot clÃ© : </label><br />';
 	echo '	<input type="text" name="motcle" value="" size="32"/><br />';
 	echo '	<label for="image">Fichier image : </label><br />';
 	echo '	<input type="file" name="image" value="" /><br />';
@@ -60,7 +60,7 @@ if (isset($_POST['terms']) && ($_POST['terms'] != 'Recherche...') ) {
 		} // End of while loop.
 		
 	} else { // No widgets here!
-		echo '<p class="error">Il n\'y a pas de variétés qui correspondent à la recherche.</p>';
+		echo '<p class="error">Il n\'y a pas de variÃ©tÃ©s qui correspondent Ã  la recherche.</p>';
 	}
 	
 } 

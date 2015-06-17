@@ -21,5 +21,5 @@ if (!defined('BASE_URL')) {
 ?>
 
 	  <h2>Projet </h2> 
-      <h3><a href="http://www.univ-lyon2.fr">Université Lumière Lyon 2</a></h3>
+      <h3><a href="http://www.univ-lyon2.fr">UniversitÃ© LumiÃ¨re Lyon 2</a></h3>
 	  <p></p>

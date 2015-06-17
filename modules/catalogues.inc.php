@@ -41,7 +41,7 @@ while (list($fcid, $fcat, $version, $annee, $mois) = mysqli_fetch_array($r, MYSQ
 
 ?>
 <!--
-	  <h2>Comité scientifique</h2>
+	  <h2>ComitÃ© scientifique</h2>
 	  <p>Jean-Claude Seguin</p>
 	  <p>Odile Leguern</p>
 	  <h2>Informatique</h2>

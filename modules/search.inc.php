@@ -27,7 +27,7 @@ if (!defined('BASE_URL')) {
 } // End of defined() IF.
 
 // Print a caption:
-echo '<h2>Résultats de la recherche</h2>';
+echo '<h2>RÃ©sultats de la recherche</h2>';
 
 // Display the search results if the form
 // has been submitted.
@@ -52,7 +52,7 @@ if (isset($_GET['terms']) && ($_GET['terms'] != 'Recherche...') ) {
 		} // End of while loop.
 		
 	} else { // No widgets here!
-		echo '<p class="error">Il n\'y a pas de variétés qui correspondent à la recherche.</p>';
+		echo '<p class="error">Il n\'y a pas de variÃ©tÃ©s qui correspondent Ã  la recherche.</p>';
 	}
 	
 } else { // Tell them to use the search form.

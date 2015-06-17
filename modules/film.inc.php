@@ -59,11 +59,11 @@ if ($titre) {
 if ($titre) { // Show the specific products.
 	
 	echo "<br /><h1>$titre</h1>\n<br />";
-	//////if (($nom)&&($prenom)) {echo "<p><em>Cinéaste</em> : <a href=\"index.php?p=personne&personne_id=$idPersonne\">$nom $prenom </a></p>";}
+	//////if (($nom)&&($prenom)) {echo "<p><em>CinÃ©aste</em> : <a href=\"index.php?p=personne&personne_id=$idPersonne\">$nom $prenom </a></p>";}
 /*	
 	//a mettre dans la fiche Personne
 	if ($datenaissance) {echo "<p><em>Date de naissance</em> : $datenaissance </p>";}
-	if ($datedeces) {echo "<p><em>Date de décés</em> : $datedeces </p>";}
+	if ($datedeces) {echo "<p><em>Date de dÃ©cÃ©s</em> : $datedeces </p>";}
 	if ($biographie) {echo "<p><em>Biographie</em> : $biographie </p>";}
 */
 
@@ -86,15 +86,15 @@ if ($titre) { // Show the specific products.
 		}
 	}
 		// Get the persons associated to this film.
-		//données personne + idMetier + role dans le film + société de production
+		//donnÃ©es personne + idMetier + role dans le film + sociÃ©tÃ© de production
 /*	$q = "SELECT film_has_personne.role, personne.idPersonne, personne.nom, personne.prenom, personne.DateNaissance, personne.DateDeces, personne.biographie, personne.MetierPersonne_idMetierPersonne, personne.SocieteProduction_idSocieteProduction FROM (film_catalogue left join film_has_personne on film_catalogue.Film_idFilm=film_has_personne.Film_idFilm) left join personne on film_has_personne.Personne_idPersonne=personne.idPersonne WHERE film_catalogue.Film_idFilm=$film_id";
 */
 
-	if ($numero) {echo "<p><em>Numéro</em> : $numero </p>";}
-	if ($numeroComplementaire) {echo "<p><em>Numéro complémentaire</em> : $numeroComplementaire </p>";}
-	if ($resume) {echo "<p><em>Résumé</em> : $resume </p>";}
+	if ($numero) {echo "<p><em>NumÃ©ro</em> : $numero </p>";}
+	if ($numeroComplementaire) {echo "<p><em>NumÃ©ro complÃ©mentaire</em> : $numeroComplementaire </p>";}
+	if ($resume) {echo "<p><em>RÃ©sumÃ©</em> : $resume </p>";}
 	//serie
-	//récuperer la série dans la table serie
+	//rÃ©cuperer la sÃ©rie dans la table serie
 	if ($idSerie){
 		$qSerie = "SELECT nomSerie FROM serie WHERE idSerie=$idSerie;";					
 		$rSerie = mysqli_query($dbc, $qSerie);
@@ -103,7 +103,7 @@ if ($titre) { // Show the specific products.
 			list ($strSerie) = mysqli_fetch_array($rSerie, MYSQLI_NUM);
 		}
 		
-		if($strSerie){echo "<p><em>Série</em> :  $strSerie </em></p>";}									
+		if($strSerie){echo "<p><em>SÃ©rie</em> :  $strSerie </em></p>";}									
 	}
 
 	//genre
@@ -143,8 +143,8 @@ if ($titre) { // Show the specific products.
 				echo "<p><a href=\"index.php?p=personne&personne_id=$idPersonne\">".$nom." ".$prenom." </a>";
 				// Determine if the role is the same with the "metier" pour afficher le role different, sinon on affiche une seule fois :
 				if (!empty($row['role'])&&(!empty($row['MetierPersonne_idMetierPersonne'])) && ($row['role'] == $row['MetierPersonne_idMetierPersonne'])) {				$role=$row['role'];
-					echo " <br /> <em>Métier : </em>";
-					//select le nom du role à partir de la table metierpersonne
+					echo " <br /> <em>MÃ©tier : </em>";
+					//select le nom du role Ã  partir de la table metierpersonne
 					$qRole = "SELECT nommetier FROM metierpersonne WHERE idMetierPersonne=$role;";					
 					$rRole = mysqli_query($dbc, $qRole);
 	
@@ -159,8 +159,8 @@ if ($titre) { // Show the specific products.
 					if (!empty($row['role']))	{
 					//afficher le role dans le film				
 						$role=$row['role'];
-						echo " <br /> <em> Rôle dans le film : </em>";
-						//select le nom du role à partir de la table metierpersonne
+						echo " <br /> <em> RÃ´le dans le film : </em>";
+						//select le nom du role Ã  partir de la table metierpersonne
 						$qRole = "SELECT nommetier FROM metierpersonne WHERE idMetierPersonne=$role;";					
 						$rRole = mysqli_query($dbc, $qRole);
 		
@@ -173,8 +173,8 @@ if ($titre) { // Show the specific products.
 					if (!empty($row['MetierPersonne_idMetierPersonne']))	{
 					//afficher le metier				
 						$metier=$row['MetierPersonne_idMetierPersonne'];
-						echo " <br /> <em>Métier : </em>";
-						//select le nom du métier à partir de la table metierpersonne
+						echo " <br /> <em>MÃ©tier : </em>";
+						//select le nom du mÃ©tier Ã  partir de la table metierpersonne
 						$qMetier = "SELECT nommetier FROM metierpersonne WHERE idMetierPersonne=$metier;";					
 						$rMetier = mysqli_query($dbc, $qMetier);
 		

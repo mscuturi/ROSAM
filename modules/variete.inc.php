@@ -6,9 +6,9 @@
  *	The page expects to receive a $_GET['vid'] value.
  */
 
-//fonction de remplacement de caractères accentués
+//fonction de remplacement de caractÃ¨res accentuÃ©s
 function stripAccents($string){
-	return strtr($string,'àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+	return strtr($string,'Ã Ã¡Ã¢Ã£Ã¤Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã±Ã²Ã³Ã´ÃµÃ¶Ã¹ÃºÃ»Ã¼Ã½Ã¿Ã€ÃÃ‚ÃƒÃ„Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃŽÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã™ÃšÃ›ÃœÃ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 }
 
 
@@ -59,7 +59,7 @@ if ($nom) { // Show the features of the variety.
 ########################################
 
 if ($idVariete>-1){
-		//calcule le nombre de photos disponibles à partir de la base de données pour cette variété
+		//calcule le nombre de photos disponibles Ã  partir de la base de donnÃ©es pour cette variÃ©tÃ©
 		$qNbPhotos = "SELECT count(photos.idPhoto) FROM varietes_photos INNER JOIN photos ON varietes_photos.idPhoto = photos.idPhoto WHERE varietes_photos.idVariete = $idVariete;";
 		$rNbPhotos = mysqli_query($dbc, $qNbPhotos);
 		// Fetch the information:
@@ -68,7 +68,7 @@ if ($idVariete>-1){
 			//affiche le nombre de photos
 			echo "Nombre de photos disponibles : $nbPhotos <br />";
 			}
-	//cherche les photos qui correspondent à la variété identifiée par $idVariete
+	//cherche les photos qui correspondent Ã  la variÃ©tÃ© identifiÃ©e par $idVariete
 		$qPhotos = "SELECT photos.idPhoto, NomFichier, NomDossier, Camera, ExposureTime, Aperture, ISO, Date FROM varietes_photos INNER JOIN photos ON varietes_photos.idPhoto = photos.idPhoto WHERE varietes_photos.idVariete = $idVariete ORDER BY Date;";
 		$rPhotos = mysqli_query($dbc, $qPhotos);
 		// Fetch the information:
@@ -77,24 +77,24 @@ if ($idVariete>-1){
 			{
 				//construire le chemin vers l'image (si elle est dans un sous-dossier)
 				$pathImage = "./images/".$nomDossier;
-				//On récupère la largeur et l'hauteur de l'image
+				//On rÃ©cupÃ¨re la largeur et l'hauteur de l'image
 				$size = getimagesize($pathImage."/".$nomFichier);
 				//change sizes if mode portrait
 				if ($size[0]>$size[1]){//largeur > hauteur (mode paysage)
-					//Largeur maximale de l'image pour la création des miniatures
+					//Largeur maximale de l'image pour la crÃ©ation des miniatures
 					$largeur_maxi = 180;
 					}
 					
 					else{//mode portrait
 						$largeur_maxi = 80;
 						}
-					//Si la largeur dépasse la limite autorisée...
+					//Si la largeur dÃ©passe la limite autorisÃ©e...
 					if ($size[0] > $largeur_maxi){
-						//...la nouvelle largeur est égale à la limite à ne pas dépasser
+						//...la nouvelle largeur est Ã©gale Ã  la limite Ã  ne pas dÃ©passer
 						$width = $largeur_maxi;
-						//La largeur d'origine divisée par la largeur limitée (on obtient un chiffre qui sert à faire la même proportion pour la hauteur)
+						//La largeur d'origine divisÃ©e par la largeur limitÃ©e (on obtient un chiffre qui sert Ã  faire la mÃªme proportion pour la hauteur)
 						$theight = ($size[0]/$largeur_maxi);
-						//La hauteur originale est divisée par le chiffre obtenu précédemment afin que l'image conserve les mêmes proportions que l'originale (mais en mode vignette)
+						//La hauteur originale est divisÃ©e par le chiffre obtenu prÃ©cÃ©demment afin que l'image conserve les mÃªmes proportions que l'originale (mais en mode vignette)
 						$height = ($size[1]/$theight);
 					} //end if $size[0]>$largeur_maxi
 					else{
@@ -112,10 +112,10 @@ if ($idVariete>-1){
 
 	} // ind if idVariete>-1
 	else{
-		echo ("Problème de variété : inexistante dans la base de données");
+		echo ("ProblÃ¨me de variÃ©tÃ© : inexistante dans la base de donnÃ©es");
 	}
 
-/* //affichage à partir des dossiers
+/* //affichage Ã  partir des dossiers
 //On indique le dossier images (le nom du dossier = IdVariete_NomVariete avec chaque mot en majuscule et sans espaces)
 //transformer chaque debut de mot en majuscule, enlever les espaces
 $nomDossier=str_replace(' ','',ucwords($nom));
@@ -123,7 +123,7 @@ $nomDossier=str_replace(' ','',ucwords($nom));
 $nomDossier=str_replace("'",'',$nomDossier);
 //enlever les .
 $nomDossier=str_replace(".",'',$nomDossier);
-//remplacer les caractères accentués
+//remplacer les caractÃ¨res accentuÃ©s
 $nomDossier=stripAccents($nomDossier);
 $pathImage = "./images/".$idVariete."_".$nomDossier;
 if (is_dir($pathImage)) { // si c'est un nom de dossier valide
@@ -132,7 +132,7 @@ if (is_dir($pathImage)) { // si c'est un nom de dossier valide
 	$handle = @opendir($pathImage) or die ("Le dossier n'existe pas !");
 	if($handle){
 	$listef=NULL;
-	//On va parcourir chaque élément du dossier
+	//On va parcourir chaque Ã©lÃ©ment du dossier
 	while ($file = readdir($handle))
 	{ //Si les fichiers sont des images on va les mettre dans la liste des fichiers $listef[]
 		if(preg_match ("!(\.jpg|\.jpeg|\.gif|\.bmp|\.png)$!i", $file)){
@@ -145,17 +145,17 @@ if (is_dir($pathImage)) { // si c'est un nom de dossier valide
 		$nbImg=0;
 	}
 	for($noImg=0; $noImg<$nbImg; $noImg++){
-		//On récupère la largeur et l'hauteur de l'image
+		//On rÃ©cupÃ¨re la largeur et l'hauteur de l'image
 		$size = getimagesize($pathImage."/".$listef[$noImg]);
-				//Largeur maximale de l'image pour la création des miniatures
+				//Largeur maximale de l'image pour la crÃ©ation des miniatures
 		$largeur_maxi = 180;
-		//Si la largeur dépasse la limite autorisée...
+		//Si la largeur dÃ©passe la limite autorisÃ©e...
 		if ($size[0] > $largeur_maxi){
-			//...la nouvelle largeur est égale à la limite à ne pas dépasser
+			//...la nouvelle largeur est Ã©gale Ã  la limite Ã  ne pas dÃ©passer
 			$width = $largeur_maxi;
-			//La largeur d'origine divisée par la largeur limitée (on obtient un chiffre qui sert à faire la même proportion pour la hauteur)
+			//La largeur d'origine divisÃ©e par la largeur limitÃ©e (on obtient un chiffre qui sert Ã  faire la mÃªme proportion pour la hauteur)
 			$theight = ($size[0]/$largeur_maxi);
-			//La hauteur originale est divisée par le chiffre obtenu précédemment afin que l'image conserve les mêmes proportions que l'originale (mais en mode vignette)
+			//La hauteur originale est divisÃ©e par le chiffre obtenu prÃ©cÃ©demment afin que l'image conserve les mÃªmes proportions que l'originale (mais en mode vignette)
 			$height = ($size[1]/$theight);
 		} //end if $size[0]>$largeur_maxi
 		else{
@@ -163,7 +163,7 @@ if (is_dir($pathImage)) { // si c'est un nom de dossier valide
 			$width = $size[0]; 
 			$height = $size[1];
 		}
-		//On affiche l'image aléatoire (en respectant les standards ! <img src="http://forum.phpfrance.com/images/smilies/icon_smile.gif" alt=":)" title="Smile" /> )
+		//On affiche l'image alÃ©atoire (en respectant les standards ! <img src="http://forum.phpfrance.com/images/smilies/icon_smile.gif" alt=":)" title="Smile" /> )
 		echo "<a href=\"".$pathImage."/".$listef[$noImg]."\" onclick=\"window.open(this.href,'_blank');return false;\"><img style=\"border: none; width: ".$width."px; height: ".$height."px\" src=\"".$pathImage."/".$listef[$noImg]."\" alt=\"".$listef[$noImg]."\" /></a>";
 	} // end for each image
 	//On ferme le dossier

@@ -7,9 +7,9 @@
  *	Execute with : http://dionysos.univ-lyon2.fr/~mscuturi/Roses/modules/chargeImagesBDD.inc.php
  */
 
-//fonction de remplacement de caractères accentués
+//fonction de remplacement de caractÃ¨res accentuÃ©s
 function stripAccents($string){
-	return strtr($string,'àáâãäçèéêëìíîïñòóôõöùúûüıÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜİ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+	return strtr($string,'Ã Ã¡Ã¢Ã£Ã¤Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã±Ã²Ã³Ã´ÃµÃ¶Ã¹ÃºÃ»Ã¼Ã½Ã¿Ã€ÃÃ‚ÃƒÃ„Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã™ÃšÃ›ÃœÃ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 }
 
 
@@ -210,7 +210,7 @@ echo($q);
 // Fetch the results:
 while (list($idVariete, $nom) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 
-	echo("Variété : $nom <br />");
+	echo("VariÃ©tÃ© : $nom <br />");
 		//On indique le dossier images (le nom du dossier = IdVariete_NomVariete avec chaque mot en majuscule et sans espaces)
 	//transformer chaque debut de mot en majuscule, enlever les espaces
 	$nomDossier=str_replace(' ','',ucwords($nom));
@@ -218,7 +218,7 @@ while (list($idVariete, $nom) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 	$nomDossier=str_replace("'",'',$nomDossier);
 	//enlever les .
 	$nomDossier=str_replace(".",'',$nomDossier);
-	//remplacer les caractères accentués
+	//remplacer les caractÃ¨res accentuÃ©s
 	$nomDossier=stripAccents($nomDossier);
 	$nomDossierCompose=$idVariete."_".$nomDossier;
 	$pathImage = "../images/".$idVariete."_".$nomDossier;
@@ -234,7 +234,7 @@ while (list($idVariete, $nom) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 		$handle = @opendir($pathImage) or die ("Le dossier n'existe pas !");
 		if($handle){
 			$listef=NULL;
-			//On va parcourir chaque élément du dossier
+			//On va parcourir chaque Ã©lÃ©ment du dossier
 			while ($file = readdir($handle)){ //Si les fichiers sont des images on va les mettre dans la liste des fichiers $listef[]
 				if(preg_match ("!(\.jpg|\.jpeg|\.gif|\.bmp|\.png)$!i", $file)){
 					$listef[] = $file;
@@ -246,7 +246,7 @@ while (list($idVariete, $nom) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 				$nbImg=0;
 			} //end if $listef
 			for($noImg=0; $noImg<$nbImg; $noImg++){
-				//On récupère la largeur et l'hauteur de l'image
+				//On rÃ©cupÃ¨re la largeur et l'hauteur de l'image
 				////$size = getimagesize($pathImage."/".$listef[$noImg]);
 				
 				//get exif informations (see http://fr2.php.net/manual/fr/function.exif-read-data.php)
@@ -264,10 +264,10 @@ while (list($idVariete, $nom) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 				echo($insertSQL);
 				$resultQueryInsert = mysqli_query($dbc, $insertSQL);
 			if ($resultQueryInsert){
-				echo "<p>Photo $listef[$noImg] ajoutée !</p>"	;
+				echo "<p>Photo $listef[$noImg] ajoutÃ©e !</p>"	;
 			}
 			else {
-				echo "<p>Problème ajout !</p>";
+				echo "<p>ProblÃ¨me ajout !</p>";
 				exit;
 			} //end if resultQueryInsert
 			//get the last identifier (for the added photo)
@@ -281,10 +281,10 @@ while (list($idVariete, $nom) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 			$sqlVariete = "INSERT INTO varietes_photos SET IdVariete=\"$idVariete\", IdPhoto=\"$idPhoto\";";
 			$resultQuery = mysqli_query($dbc, $sqlVariete);
 			if ($resultQuery){
-				echo "<p>Photo variete ajoutée $idVariete !</p>";
+				echo "<p>Photo variete ajoutÃ©e $idVariete !</p>";
 			}
 			else {
-				echo "<p>Problème ajout photo variete !</p>";
+				echo "<p>ProblÃ¨me ajout photo variete !</p>";
 				exit;
 			}//end if resultQuery INSERT variete photo
 			} //end for each fichier image
@@ -294,6 +294,6 @@ while (list($idVariete, $nom) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 		echo("Le dossier n'existe pas pour l'instant");
 	} //end else if is_dir
 		
-} //end while variétés
+} //end while variÃ©tÃ©s
 */
 ?>

@@ -30,7 +30,7 @@ echo "<ol>";
 while (list($idVariete, $nom, $nomcode) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 //while (list($idVariete, $nom, $nomcode) = mysql_fetch_array($r, MYSQLI_NUM)) {
 			$nbPhotos = "";
-		//calcule le nombre de photos disponibles à partir de la base de données pour cette variétée
+		//calcule le nombre de photos disponibles Ã  partir de la base de donnÃ©es pour cette variÃ©tÃ©e
 		$qNbPhotos = "SELECT count(photos.idPhoto) FROM varietes_photos INNER JOIN photos ON varietes_photos.idPhoto = photos.idPhoto WHERE varietes_photos.idVariete = $idVariete;";
 		$rNbPhotos = mysqli_query($dbc, $qNbPhotos);
 		// Fetch the information:
@@ -44,7 +44,7 @@ while (list($idVariete, $nom, $nomcode) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 /*
 //////////////////////////////////Add photos
         ########################################
-        # Affichage image aléatoire //manucci.info
+        # Affichage image alÃ©atoire //manucci.info
         ########################################
         //On indique le dossier images (le nom du dossier = IdVariete_NomVariete avec chaque mot en majuscule et sans espaces)
 		$nomDossier=str_replace(' ','',ucwords($nom));
@@ -52,20 +52,20 @@ while (list($idVariete, $nom, $nomcode) = mysqli_fetch_array($r, MYSQLI_NUM)) {
 		$nomDossier=str_replace("'",'',$nomDossier);
 		//enlever les .
 		$nomDossier=str_replace(".",'',$nomDossier);
-		//remplacer les é par e
-		$nomDossier=str_replace('é','e',$nomDossier);
-		//remplacer les è par e
-		$nomDossier=str_replace('è','e',$nomDossier);
-		//remplacer les ë par e
-		$nomDossier=str_replace('ë','e',$nomDossier);
-		//remplacer les ï par i
-		$nomDossier=str_replace('ï','i',$nomDossier);
-		//remplacer les ô par o
-		$nomDossier=str_replace('ô','o',$nomDossier);
+		//remplacer les Ã© par e
+		$nomDossier=str_replace('Ã©','e',$nomDossier);
+		//remplacer les Ã¨ par e
+		$nomDossier=str_replace('Ã¨','e',$nomDossier);
+		//remplacer les Ã« par e
+		$nomDossier=str_replace('Ã«','e',$nomDossier);
+		//remplacer les Ã¯ par i
+		$nomDossier=str_replace('Ã¯','i',$nomDossier);
+		//remplacer les Ã´ par o
+		$nomDossier=str_replace('Ã´','o',$nomDossier);
         $chem_img = "./images/".$idVariete."_".$nomDossier;
         //On ouvre le dossier images
         $handle  = opendir($chem_img);
-        //On parcoure chaque élément du dossier
+        //On parcoure chaque Ã©lÃ©ment du dossier
         while ($file = readdir($handle))
                 {
                         //Si les fichiers sont des images
@@ -75,21 +75,21 @@ while (list($idVariete, $nom, $nomcode) = mysqli_fetch_array($r, MYSQLI_NUM)) {
                                 }
                 }
         
-        $random_img = rand(0, count($listef)-1); //permet de prendre une image totalement au hasard (RANDom) parmi toutes les images trouvées.
+        $random_img = rand(0, count($listef)-1); //permet de prendre une image totalement au hasard (RANDom) parmi toutes les images trouvÃ©es.
         
-        //On calcule la largeur et la hauteur de l'image aléatoire
+        //On calcule la largeur et la hauteur de l'image alÃ©atoire
         $size = getimagesize($chem_img."/".$listef[$random_img]);
         
-        //Largeur maximale de l'image pour la création des miniatures
+        //Largeur maximale de l'image pour la crÃ©ation des miniatures
         $largeur_maxi = 180;
-        //Si la largeur dépasse la limite autorisée...
+        //Si la largeur dÃ©passe la limite autorisÃ©e...
         if ($size[0] > $largeur_maxi)
                 {
-                        //...la nouvelle largeur est égale à la limite à ne pas dépasser
+                        //...la nouvelle largeur est Ã©gale Ã  la limite Ã  ne pas dÃ©passer
                         $width = $largeur_maxi;
-                        //La largeur d'origine divisée par la largeur limitée (on obtient un chiffre qui sert à faire la même proportion pour la hauteur)
+                        //La largeur d'origine divisÃ©e par la largeur limitÃ©e (on obtient un chiffre qui sert Ã  faire la mÃªme proportion pour la hauteur)
                         $theight = ($size[0]/$largeur_maxi);
-                        //La hauteur originale est divisée par le chiffre obtenu précédemment afin que l'image conserve les mêmes proportions que l'originale (mais en mode vignette)
+                        //La hauteur originale est divisÃ©e par le chiffre obtenu prÃ©cÃ©demment afin que l'image conserve les mÃªmes proportions que l'originale (mais en mode vignette)
                         $height = ($size[1]/$theight);
                 }
         else
@@ -98,7 +98,7 @@ while (list($idVariete, $nom, $nomcode) = mysqli_fetch_array($r, MYSQLI_NUM)) {
                         $width = $size[0]; $height = $size[1];
                 }
 
-        //On affiche l'image aléatoire (en respectant les standards ! <img src="http://forum.phpfrance.com/images/smilies/icon_smile.gif" alt=":)" title="Smile" /> )
+        //On affiche l'image alÃ©atoire (en respectant les standards ! <img src="http://forum.phpfrance.com/images/smilies/icon_smile.gif" alt=":)" title="Smile" /> )
 
         echo "<a href=\"".$chem_img."/".$listef[$random_img]."\" onclick=\"window.open(this.href,'_blank');return false;\"><img style=\"border: none; width: ".$width."px; height: ".$height."px\" src=\"".$chem_img."/".$listef[$random_img]."\" alt=\"".$listef[$random_img]."\" /></a>";
 

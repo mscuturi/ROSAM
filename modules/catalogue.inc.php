@@ -91,7 +91,7 @@ if ($catalogue) { // Show the films.
 	}
 
 } else { // Invalid $_GET['cid']!
-	echo '<p class="error">Erreur d\'accès .</p>';
+	echo '<p class="error">Erreur d\'accÃ¨s .</p>';
 }
 
 

@@ -31,7 +31,7 @@ switch ($p) {
 		$page = 'groupes.inc.php';
 		$page_title = 'Groupes';
 		break;
-//affiche les variétés d'un groupe particulier donné comme parametre à travers son id (gid)
+//affiche les variÃ©tÃ©s d'un groupe particulier donnÃ© comme parametre Ã  travers son id (gid)
 	case 'groupe':
 		if (isset($_GET['gid'])) {
 			$gid = $_GET['gid'];
@@ -44,12 +44,12 @@ switch ($p) {
 		$page_title = 'Groupe';
 //		$parameters="?gid=".$gid;
 		break;
-//liste compléte des variétés de la base
+//liste complÃ©te des variÃ©tÃ©s de la base
 	case 'varietes':
 		$page = 'varietes.inc.php';
-		$page_title = 'Variétés';
+		$page_title = 'VariÃ©tÃ©s';
 		break;
-//affiche les informations+images en petit format d'une variété particulière donné comme parametre à travers son id (vid)
+//affiche les informations+images en petit format d'une variÃ©tÃ© particuliÃ¨re donnÃ© comme parametre Ã  travers son id (vid)
 	case 'variete':
 		if (isset($_GET['vid'])) {
 			$vid = $_GET['vid'];
@@ -59,10 +59,10 @@ switch ($p) {
 			$vid = NULL;
 		}
 		$page = 'variete.inc.php';
-		$page_title = 'Variété';
+		$page_title = 'VariÃ©tÃ©';
 //		$parameters="?vid=".$vid;
 		break;
-//affiche en grand une photo particulière d'une variété particulière donnée comme paramètre à travers son id (vid)
+//affiche en grand une photo particuliÃ¨re d'une variÃ©tÃ© particuliÃ¨re donnÃ©e comme paramÃ¨tre Ã  travers son id (vid)
 	case 'photo':
 		if (isset($_GET['vid'])) {
 			$vid = $_GET['vid'];
@@ -83,7 +83,7 @@ switch ($p) {
 		$page_title = 'Photo';
 		$parameters="?vid=".$vid." & pid=".$pid;
 		break;
-//affiche les informations d'une personne donnée comme paramètre à travers son id (personne_id)
+//affiche les informations d'une personne donnÃ©e comme paramÃ¨tre Ã  travers son id (personne_id)
 	//liste des catalogues de la base
 	case 'personnes':
 		$page = 'personnes.inc.php';

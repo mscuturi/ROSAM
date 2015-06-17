@@ -46,7 +46,7 @@ Changed color counts to percentages.*/
 // function dominant_color($url){
 
 	 /*   
-		//pas bon, calcule la moyenne qui peut être une couleur qui n'existe pas dans l'image
+		//pas bon, calcule la moyenne qui peut Ãªtre une couleur qui n'existe pas dans l'image
 		$i = imagecreatefromjpeg($url);
 		$rTotal  = '';
 		$bTotal  = '';
@@ -72,7 +72,7 @@ Changed color counts to percentages.*/
 	 */
 	 
 	/** 	
-		//pas bon, tableau avec toutes les couleurs possibles, ne tient pas dans la mémoire
+		//pas bon, tableau avec toutes les couleurs possibles, ne tient pas dans la mÃ©moire
 		$ImageChoisie = imagecreatefromjpeg($url);
 		$TailleImageChoisie = getimagesize($url);
 		 
@@ -125,9 +125,9 @@ Changed color counts to percentages.*/
  
  
 
-//fonction de remplacement de caractères accentués
+//fonction de remplacement de caractÃ¨res accentuÃ©s
 function stripAccents($string){
-	return strtr($string,'àáâãäçèéêëìíîïñòóôõöùúûüıÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜİ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+	return strtr($string,'Ã Ã¡Ã¢Ã£Ã¤Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã±Ã²Ã³Ã´ÃµÃ¶Ã¹ÃºÃ»Ã¼Ã½Ã¿Ã€ÃÃ‚ÃƒÃ„Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã™ÃšÃ›ÃœÃ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 }
 
 
@@ -182,7 +182,7 @@ if ($nom) { // Show the name of the variety.
 # Affichage photos
 ########################################
 if ($idVariete>0 && $idPhoto>0){
-	//cherche la photo qui correspondent à la variable $idPhoto
+	//cherche la photo qui correspondent Ã  la variable $idPhoto
 		$qPhotos = "SELECT NomFichier, NomDossier, Camera, ExposureTime, Aperture, ISO, Date, SubjectDistance FROM photos WHERE idPhoto = $idPhoto;";
 		$rPhotos = mysqli_query($dbc, $qPhotos);
 		// Fetch the information:
@@ -192,18 +192,18 @@ if ($idVariete>0 && $idPhoto>0){
 				
 				//construire le chemin vers l'image (si elle est dans un sous-dossier)
 				$pathImage = "./images/".$nomDossier;
-				//On récupère la largeur et l'hauteur de l'image
-				//la taille de l'image affichée sera 2 fois celle des petites images affichées dans la page variété
+				//On rÃ©cupÃ¨re la largeur et l'hauteur de l'image
+				//la taille de l'image affichÃ©e sera 2 fois celle des petites images affichÃ©es dans la page variÃ©tÃ©
 				$size = getimagesize($pathImage."/".$nomFichier);
-				//Largeur maximale de l'image pour la création des miniatures
+				//Largeur maximale de l'image pour la crÃ©ation des miniatures
 				$largeur_maxi = 1024;
-				//Si la largeur dépasse la limite autorisée...
+				//Si la largeur dÃ©passe la limite autorisÃ©e...
 				if ($size[0] > $largeur_maxi){
-					//...la nouvelle largeur est égale à la limite à ne pas dépasser
+					//...la nouvelle largeur est Ã©gale Ã  la limite Ã  ne pas dÃ©passer
 					$width = $largeur_maxi;
-					//La largeur d'origine divisée par la largeur limitée (on obtient un chiffre qui sert à faire la même proportion pour la hauteur)
+					//La largeur d'origine divisÃ©e par la largeur limitÃ©e (on obtient un chiffre qui sert Ã  faire la mÃªme proportion pour la hauteur)
 					$theight = ($size[0]/$largeur_maxi);
-					//La hauteur originale est divisée par le chiffre obtenu précédemment afin que l'image conserve les mêmes proportions que l'originale (mais en mode vignette)
+					//La hauteur originale est divisÃ©e par le chiffre obtenu prÃ©cÃ©demment afin que l'image conserve les mÃªmes proportions que l'originale (mais en mode vignette)
 					$height = ($size[1]/$theight);
 				} //end if $size[0]>$largeur_maxi
 				else{
@@ -232,7 +232,7 @@ if ($idVariete>0 && $idPhoto>0){
 
 	} // ind if idVariete>-1
 	else{
-		echo ("Problème de variété : inexistante dans la base de données");
+		echo ("ProblÃ¨me de variÃ©tÃ© : inexistante dans la base de donnÃ©es");
 	}
 
 	//////////////////////////////////End affiche photo

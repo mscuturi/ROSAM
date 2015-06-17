@@ -7,9 +7,9 @@
  *	Execute with : http://dionysos.univ-lyon2.fr/~mscuturi/Roses/modules/chargeImagesBDD.inc.php
  */
 
-//fonction de remplacement de caractères accentués
+//fonction de remplacement de caractÃ¨res accentuÃ©s
 function stripAccents($string){
-	return strtr($string,'àáâãäçèéêëìíîïñòóôõöùúûüıÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜİ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
+	return strtr($string,'Ã Ã¡Ã¢Ã£Ã¤Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã±Ã²Ã³Ã´ÃµÃ¶Ã¹ÃºÃ»Ã¼Ã½Ã¿Ã€ÃÃ‚ÃƒÃ„Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã™ÃšÃ›ÃœÃ', 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 }
 
 
@@ -102,7 +102,7 @@ $rVariete = mysqli_query($dbc, $qVariete);
 
 // Fetch the results:
 echo "<select name=\"idVariete\">";
-//on donne la possibilité de ne pas identifier une rose, mais la laisser en "Inconnue"
+//on donne la possibilitÃ© de ne pas identifier une rose, mais la laisser en "Inconnue"
 echo "<option value=\"0\">Inconnue</option>";
 while (list($idVariete, $nom) = mysqli_fetch_array($rVariete, MYSQLI_NUM)) {
 	// Print as a select option.
@@ -122,14 +122,14 @@ echo "<input type=\"reset\" />";
 				echo "<input type=\"hidden\" name=\"idPhoto\" value=\"$idPhoto\" />";
 				//construire le chemin vers l'image (si elle est dans un sous-dossier)
 				$pathImage = "../images/".$nomDossier;
-				//On récupère la largeur et l'hauteur de l'image
+				//On rÃ©cupÃ¨re la largeur et l'hauteur de l'image
 				$size = getimagesize($pathImage."/".$nomFichier);
 				//afficher photo miniature et link vers la page photo avec comme parametres idVariete et idPhoto
 				echo "<br /> Date : $date <br />";
 				
 				echo "<img style=\"float:left\" src=\"".$pathImage."/".$nomFichier."\" alt=\"".$nomFichier."\" /></a>";
 				$exif = exif_read_data($pathImage."/".$nomFichier, 'IFD0');
-				echo $exif===false ? "Aucun en-tête de donnés n'a été trouvé.<br />\n" : "L'image contient des en-têtes<br />\n";
+				echo $exif===false ? "Aucun en-tÃªte de donnÃ©s n'a Ã©tÃ© trouvÃ©.<br />\n" : "L'image contient des en-tÃªtes<br />\n";
 				
 				$exif = exif_read_data($pathImage."/".$nomFichier, 0, true);
 				foreach ($exif as $key => $section) {
