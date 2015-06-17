@@ -10,7 +10,7 @@ if (!defined('BASE_URL')) {
 
 	// Need the BASE_URL, defined in the config file:
 	require_once ('../includes/config.inc.php');
-	@include_once("../includes/analyticstracking.php");
+	include_once("../includes/analyticstracking.php");
 	
 	// Redirect to the index page:
 	$url = BASE_URL . 'index.php';
