@@ -22,7 +22,7 @@ header ("Cache-Control: max-age=$interval");
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>View Tasks</title>
 </head>
 <body>
