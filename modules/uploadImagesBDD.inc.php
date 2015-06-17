@@ -4,7 +4,7 @@
  *	This page load all photos from directories to photo table in the database.
  *	Links photo/variety.
  *	The page expects no $_GET['...'] value.
- *	Execute with : http://dionysos.univ-lyon2.fr/~mscuturi/Roses/modules/chargeImagesBDD.inc.php
+ *	Execute with : http://roses.example.org/roses/modules/chargeImagesBDD.inc.php
  */
 
 //fonction de remplacement de caractères accentués
