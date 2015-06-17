@@ -31,13 +31,13 @@ if ($local) {
 	$debug = TRUE;
 	
 	// Define the constants:
-	define ('BASE_URI', '/Roses/');
-	define ('BASE_URL',	'http://localhost/Roses/');
+	define ('BASE_URI', '/roses/');
+	define ('BASE_URL',	'http://localhost/roses/');
 	define ('DB', '/Roses/mysql.inc.php');
 	
 } else {
-	define ('BASE_URI', '/Roses/');
-	define ('DB', '/Roses/mysql.inc.php');
+	define ('BASE_URI', '/roses/');
+	define ('DB', '/roses/mysql.inc.php');
 	
 }
 	
