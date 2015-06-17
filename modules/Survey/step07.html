@@ -9,16 +9,20 @@
 <body>
 	<h1>ROSAM - évaluation d'une variété</h1>
 		<p class="variety">Variété NOM_DE_LA_VARIETE</p>
-		<p class="instructions">		<p class="instructions">Cochez les cases des qualités que vous associez à son odeur.</p>
+		<p class="instructions">		<p class="instructions">Selon vous, le parfum de cette rose est-il plutôt…</p>
 	<form action="step08.html" accept-charset="utf-8">
-		<p>
-			<input id="fresh" name="fresh" type="checkbox">
-		<label for="fresh">Frais</label>
-	</p>
-	<p>
-		<input id="heady" name="heady" type="checkbox">
-		<label for="heady">Capiteux</label>
-	</p>
+		<p><span class="name-tag">Frais </span>
+			<input id="fresh-yes" name="fresh" type="radio" required>
+		  <label for="fresh-yes">Oui</label>
+			<input id="fresh-no" name="fresh" type="radio" required>
+		  <label for="fresh-no">Non</label>
+		</p>
+		<p><span class="name-tag">Capiteux </span>
+			<input id="heady-yes" name="heady" type="radio" required>
+		  <label for="heady-yes">Oui</label>
+			<input id="heady-no" name="heady" type="radio" required>
+		  <label for="heady-no">Non</label>
+		</p>
 		<p><button name="next" value="fragrance_qualities">Suite</button></p>
 	</form>
 </body>

@@ -1,6 +1,10 @@
 .important {
   font-weight:bold;
 }
+.name-tag {
+  width: 5em;
+  float: left;
+}
 .slider input{
   -webkit-appearance:none;
   -moz-appearance:none;
@@ -23,7 +27,6 @@
   width: 2em;
   height: 2em;
   border: thin solid black;
-  #padding-top: 0.5em;
   -webkit-transition: all 100ms ease-in;
   -moz-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
