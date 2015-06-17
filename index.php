@@ -24,7 +24,7 @@ switch ($p) {
 
 	case 'about':
 		$page = 'about.inc.php';
-		$page_title = 'A propos de ce site';
+		$page_title = 'À propos de ce site';
 		break;
 //liste des groupes de la base
 	case 'groupes':
