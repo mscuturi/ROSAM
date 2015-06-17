@@ -24,7 +24,7 @@ if (!defined('BASE_URL')) {
       <!-- <h3><a href="http://www.univ-lyon2.fr">Université Lumière Lyon 2</a></h3> -->
 	  <p>Utiliser les nouvelles technologies au service de :
 		<ul>
-        	<li>la capitalisation des connaissances sur les plantes en général, les roses en spécial (à travers des informations textuelles mais aussi des images et des vidéos) <!-- réunir les informations souvent partielles quon peut trouver dans des livres, encyclopédies dans une base de données en-ligne, accessible de partout (sans ou avec identification ?)--></li>
+        	<li>la capitalisation des connaissances sur les plantes en général, les roses en spécial (à travers des informations textuelles mais aussi des images et des vidéos) <!-- réunir les informations souvent partielles qu'on peut trouver dans des livres, encyclopédies dans une base de données en-ligne, accessible de partout (sans ou avec identification ?)--></li>
 			<li>la valorisation des collections des roses anciennes et nouvelles</li>
 			<li>la diffusion d'informations sur les anciennes/nouvelles variétés</li>
 			<li>l'aide à l'identification des variétés de roses</li>
